@@ -22,11 +22,10 @@ services:
   dockernodeapi:
     container_name: node-express-biblioteca
     build: ./api
-    command: npm start
     ports: 
       - "3000:3000"
     volumes:
-      - .:/usr/app/front
+      - ./api:/usr/app
     networks:
       - rede_node_express
     depends_on:
@@ -35,11 +34,10 @@ services:
   dockernodefront:
     container_name: node-react-biblioteca
     build: ./front
-    command: npm start
     ports:
       - "8000:8000"
     volumes:
-      - .:/usr/app/api
+      - ./front:/usr/app
     networks:
       - rede_node_express
 
