@@ -15,7 +15,7 @@ services:
     expose:
       - '3306'
     volumes:
-      - mysql-db:/var/lib/mysql
+      - ./mysql-db:/var/lib/mysql
     networks:
       - rede_node_express
 
